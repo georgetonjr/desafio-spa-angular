@@ -1,0 +1,21 @@
+<div class="form" *ngIf="user">
+  <label>Nome</label>
+  <input [(ngModel)]="user.nome" required matInput placeholder="Ex. Paulo" />
+
+  <label>E-mail</label>
+  <input
+    [(ngModel)]="user.email"
+    required
+    matInput
+    placeholder="Ex. exemplo@exemplo.com"
+  />
+
+  <label>Contato alternativo</label>
+  <input
+    [(ngModel)]="user.contatoAlternativo"
+    matInput
+    placeholder="Contato alternativo não fornecido"
+  />
+
+  <button mat-raised-button color="primary">Salvar</button>
+</div>

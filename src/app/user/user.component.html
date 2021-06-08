@@ -1,0 +1,37 @@
+<div>
+  <mat-card *ngFor="let user of users" class="card">
+    <mat-card-header class="card-header">
+      <img mat-card-image [src]="user.imgUrl" class="card-img" />
+    </mat-card-header>
+
+    <mat-card-content class="card-content">
+      <mat-card-title>{{ user.nome }}</mat-card-title>
+      <mat-card-subtitle>
+        <i class="fa fa-envelope"></i>
+        {{ user.email }}
+        <br />
+        <i class="fa fa-envelope-open"></i>
+        {{
+          user.contatoAlternativo
+            ? user.contatoAlternativo
+            : "Contato alternativo não fornecido"
+        }}
+        <br />
+        Criado em {{ user.createdAt | date: "dd/MM/yyyy" }}
+      </mat-card-subtitle>
+    </mat-card-content>
+
+    <mat-card-actions class="card-buttons">
+      <button (click)="showEdit(user.id)" mat-raised-button color="primary">
+        Editar
+      </button>
+      <button mat-raised-button color="warn" (click)="deleteUser(user.id)">
+        Excluir
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div *ngIf="show">
+    <spa-edit-user [user]="user"></spa-edit-user>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header><h1>Gerenciamento de usuarios</h1></header>
+    <button
+      *ngIf="!edit"
+      mat-raised-button
+      color="primary"
+      (click)="showCreate()"
+    >
+      Adicionar usuario
+    </button>
+    <div *ngIf="edit" class="created-user">
+      <spa-create-user></spa-create-user>
+      <button mat-flat-button color="warn" (click)="showCreate()">
+        cancelar
+      </button>
+    </div>
+
+    <nav class="nav">
+      <i class="fa fa-user" style="margin-left: 2%"></i>
+      <label style="font-weight: bold"> user detail</label>
+    </nav>
+
+    <spa-user></spa-user>
+  </body>
+</html>

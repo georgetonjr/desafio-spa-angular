@@ -1,0 +1,39 @@
+<form class="form" [formGroup]="userForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nome</mat-label>
+    <input formControlName="nome" required matInput placeholder="Ex. Paulo" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>E-mail</mat-label>
+    <input
+      formControlName="email"
+      required
+      matInput
+      placeholder="Ex. exemplo@exemplo.com"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Contato alternativo</mat-label>
+    <input
+      formControlName="contatoAlternativo"
+      matInput
+      placeholder="Ex. outra forma de contatá-lo"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Foto</mat-label>
+    <input
+      formControlName="imgUrl"
+      matInput
+      placeholder="Colocar link da imagem"
+    />
+  </mat-form-field>
+  <div class="actions-buttons">
+    <button (click)="save()" mat-raised-button color="primary">
+      Cadastrar usuário
+    </button>
+  </div>
+</form>
